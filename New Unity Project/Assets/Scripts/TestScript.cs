@@ -1,10 +1,10 @@
 ﻿
-using UnityEngine;
+using UnityEngine; //access unity built in functions
 
 public class TestScript : MonoBehaviour
 {
     //some string declerations for fun
-    public string yourName = "yourName";
+    public string yourName = "Ervey Del Rosario";
     private string myPrivateString = "open";
     private int counter = 0; 
 
