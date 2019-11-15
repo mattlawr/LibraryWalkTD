@@ -6,6 +6,6 @@ public class SampleEnemyHitbox : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision With:" + collision.gameObject.tag);
+        //Debug.Log("Collision With:" + collision.gameObject.tag);
     }
 }
