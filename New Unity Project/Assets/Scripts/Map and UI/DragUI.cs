@@ -11,58 +11,57 @@ using UnityEngine.EventSystems;
 public class DragUI : MonoBehaviour
     , IPointerDownHandler
     , IPointerUpHandler
+    , IDragHandler
 {
+    static readonly float Y_MIN = -2f;
+
     [Tooltip("The GameObject for this element to instantiate when dropped (leave null to target this GameObject).")]
     public GameObject drop = null;
 
     [Tooltip("The GameObject for this element to temporarily instantiate when being dragged (leave null to target this GameObject).")]
     public GameObject carry = null;
 
-    private bool held = false;
-    private Transform holdingTransform = null;
+    private Transform held = null;
     private Vector3 initialPos;
 
     private void Update()
     {
-        if (held)
-        {
-            Holding();// Update position of dragged transform.
-        }
+
     }
 
     /**
-     * Called while user is clicking on this DragUI element (works with EventSystem).
+     * Implementations of Unity UI handling (works with EventSystem).
      */
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        Click();
+        Pickup();
     }
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
     {
-        Click();
+        Drop(PointerPos(eventData.position));
     }
-
-    /**
-     * Called when clicked AND unclicked.
-     */
-    void Click()
+    void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        if (held)
-        {
-            Drop(MousePos());
-        }
-        else
-        {
-            Pickup();
-        }
+        Holding(eventData);
     }
 
     /// <summary>
     /// Updates the position of the indicated transform to match the mouse position.
     /// </summary>
-    void Holding()
+    void Holding(PointerEventData e)
     {
-        holdingTransform.localPosition = MousePos();
+        Vector3 pos = PointerPos(e.position);
+        held.localPosition = pos;
+
+        SpriteRenderer sr = held.GetComponent<SpriteRenderer>();
+        if (pos.y < Y_MIN && sr)
+        {
+            //print(pos);
+            sr.color = Color.red;
+        } else if(sr)
+        {
+            sr.color = Color.green;
+        }
     }
 
     /// <summary>
@@ -70,19 +69,17 @@ public class DragUI : MonoBehaviour
     /// </summary>
     public void Pickup()
     {
-        initialPos = this.transform.localPosition;
+        initialPos = this.transform.position;
 
         Transform t = this.transform;// Target this object
         if (carry)
         {
-            GameObject c = GameObject.Instantiate(carry, null);// Instantiate temporary carry object
+            GameObject c = GameObject.Instantiate(carry, initialPos, Quaternion.identity, null);// Instantiate temporary carry object
             t = c.transform;
         }
+        
 
-        // Subtract COST of tower/movement here...
-
-        holdingTransform = t;
-        held = true;
+        held = t;
     }
 
     /// <summary>
@@ -91,25 +88,43 @@ public class DragUI : MonoBehaviour
     void Drop(Vector3 pos)
     {
         Transform t = this.transform;// Target this object
-        if (drop)
+
+        if (carry && held) { Destroy(held.gameObject); }// Remove temp obj
+        if (drop && pos.y >= Y_MIN)
         {
             GameObject c = GameObject.Instantiate(drop, null);// Instantiate drop object
             t = c.transform;
             if (!carry) { this.transform.localPosition = initialPos; }
+        } else if(pos.y < Y_MIN)
+        {
+            //cancel drop and cost
+            return;
         }
-        if(carry && holdingTransform) { Destroy(holdingTransform.gameObject); }// Remove temp obj
+
+        // Subtract COST of tower/movement here...
 
         t.localPosition = pos;
-        held = false;
     }
 
     /// <summary>
-    /// Gets the flattened World position of the Mouse.
+    /// Gets the flattened World position of the screen position.
     /// </summary>
-    /// <returns>The Vector3 projection of the mouse position from the Screen.</returns>
-    public static Vector3 MousePos()
+    /// <returns>The Vector3 projection of the pointer position from the Screen.</returns>
+    public static Vector3 PointerPos(Vector2 point)
     {
-        Vector3 m = Input.mousePosition;
+        Vector3 m = point;
         return Vector3.Scale(Camera.main.ScreenToWorldPoint(m), new Vector3(1f, 1f, 0f));// Flattened vector
     }
+}
+
+class Stretch
+{
+    Transform transform;
+
+    public Stretch(Transform t)
+    {
+        transform = t;
+    }
+
+    // TBD
 }
