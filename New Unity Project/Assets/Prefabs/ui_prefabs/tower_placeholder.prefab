@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4255621729892983545}
   - component: {fileID: 4255621729892983544}
   - component: {fileID: 4255621729892983546}
-  - component: {fileID: 4255621729892983551}
   m_Layer: 0
   m_Name: tower_placeholder
   m_TagString: Untagged
@@ -108,17 +107,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.31, y: 0.28}
   m_EdgeRadius: 0
---- !u!114 &4255621729892983551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255621729892983550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 216c36ae07ec01145b610d005f8606c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop: {fileID: 0}
-  carry: {fileID: 0}
