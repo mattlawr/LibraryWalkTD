@@ -4,7 +4,11 @@ using UnityEngine; //access unity built in functions
 public class TestScript : MonoBehaviour
 {
     //some string declerations for fun
+<<<<<<< HEAD
     public string yourName = "Ervey Del Rosario";
+=======
+    public string yourName = "Javier";
+>>>>>>> 38821f9d44e7158a0321028424aba35ebc888b95
     private string myPrivateString = "open";
     private int counter = 0; 
 
