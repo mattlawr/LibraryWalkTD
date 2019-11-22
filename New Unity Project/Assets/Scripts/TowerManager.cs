@@ -10,9 +10,11 @@ public class TowerManager : MonoBehaviour
     private List<Enemy> current_enemy_list = new List<Enemy>(); // assuming its of type Enemy
 
     private Vector3 position; // this will be the center
+    private int damage = 30;
+    float fire_rate = 2.0F;
     private CircleCollider2D towerRange; 
-
-
+    private int attackDelay;
+    private int timer = 0;
 
     private void OnCollisionEnter2D(CircleCollider2D enemy) {
         //add enemy to the target list; create bullet with enemy ref and damage value and fire rate
@@ -23,15 +25,10 @@ public class TowerManager : MonoBehaviour
         current_enemy_list.Remove(enemy.gameObject);
     }
 
-    private void shoot_enemies(){
+    /* Basic tower */
+    private void attack_enemy(){
         Enemy enemy = current_enemy_list[0];
-
-        /*subject to change; placeholders*/
-        int damage_val = 30;
-        float fire_rate = 2.0F;
-
-
-        Bullet bullet = new Bullet(enemy, fire_rate, damage_val);
+        Bullet bullet = new Bullet(enemy, fire_rate, damage);
     }
 
     //----------------------------------------------------------------------------
@@ -47,6 +44,11 @@ public class TowerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if ((current_enemy_list.Count != 0) && (attackDelay <= timer)) {
+           attack_enemy();
+           timer = 0;
+       }
+
+       timer++;
     }
 }
