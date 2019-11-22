@@ -119,11 +119,22 @@ public class DragUI : MonoBehaviour
 
 class Stretch
 {
-    Transform transform;
+    private float strength;
 
-    public Stretch(Transform t)
+    private Transform transform;
+
+    public Stretch(Transform t, float strength)
     {
         transform = t;
+        this.strength = strength;
+    }
+
+    /**
+     * Called every frame to update transform
+     */
+    public void StretchUpdate(Vector3 delta)
+    {
+
     }
 
     // TBD
