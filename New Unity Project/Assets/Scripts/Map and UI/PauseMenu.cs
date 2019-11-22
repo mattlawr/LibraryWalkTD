@@ -11,11 +11,11 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         //if p key is pressed, then either pause or resume the game
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && gamePaused)
         {
             Resume();
         }
-        else
+        else if (Input.GetKeyDown(KeyCode.P) && !gamePaused)
         {
             Pause();
         }
