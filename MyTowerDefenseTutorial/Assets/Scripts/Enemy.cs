@@ -6,10 +6,12 @@ public class Enemy : MonoBehaviour
     public float speed = 10f;
 
     private Transform target;
-    public int wavepointIndex = 0;
+    private int wavepointIndex;
+    private int tempIndex;
 
     private void Start()
     {
+        wavepointIndex = tempIndex;
         target = Waypoints.points[0];
     }
 
@@ -20,13 +22,25 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+        target = Waypoints.points[wavepointIndex];
+
+
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
 
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             GetNextWaypoint();
         }
+    }
+
+    public void SetWaypoint(int index)
+    {
+        tempIndex = index;
+        wavepointIndex = index;
+        target = Waypoints.points[index];
+        print(wavepointIndex + " TEST");
     }
 
     public void GetNextWaypoint()

@@ -9,8 +9,7 @@ public class Clique : MonoBehaviour
     public int wavepointIndex = 0;
 
     // Clique splits up into individuals when clique health is depleted
-    public Transform individual;
-    Enemy test;
+    public Enemy individual;
 
     private void Start()
     {
@@ -23,11 +22,11 @@ public class Clique : MonoBehaviour
         {
             Vector3 position = transform.position;
             Quaternion rotation = transform.rotation;
-            int wavepointIndex = transform.wavepointIndex;
             
             // Need to add a delay so that transform can still be used
             Instantiate(individual, position, rotation);
-            individual.
+            individual.SetWaypoint(wavepointIndex);
+            print(wavepointIndex);
             // Delay here
             Destroy(gameObject);
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.449158, g: 0.49923253, b: 0.575713, a: 1}
+  m_IndirectSpecularColor: {r: 0.4491585, g: 0.49923372, b: 0.5757141, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3239,10 +3239,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  speed: 5
+  speed: 10
   target: {fileID: 0}
   wavepointIndex: 0
-  individual: {fileID: 1338666833996224436, guid: 6d19e8a2d51887c45b6b6ed72b3760b3,
+  individual: {fileID: -2103808474993405708, guid: 6d19e8a2d51887c45b6b6ed72b3760b3,
     type: 3}
 --- !u!136 &369390150
 CapsuleCollider:
@@ -8164,7 +8164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 10
-  wavepointIndex: 0
 --- !u!1001 &1024838781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15110,7 +15109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 10
-  wavepointIndex: 0
 --- !u!1001 &1805234596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16458,7 +16456,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 10
-  wavepointIndex: 0
 --- !u!1001 &1987701794
 PrefabInstance:
   m_ObjectHideFlags: 0
