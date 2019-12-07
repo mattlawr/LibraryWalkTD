@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Clique : MonoBehaviour
 {
-    public int health = 10;
-    public float speed = 10f;
+    public int health = 30;
+    public float speed = 5f;
 
     private Transform target;
-    public int wavepointIndex = 0;
+    private int wavepointIndex = 0;
+
+    Enemy test;
 
     private void Start()
     {
@@ -17,6 +19,8 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
+            
+            Enemy test2 = Instantiate(test, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
@@ -29,7 +33,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void GetNextWaypoint()
+    void GetNextWaypoint()
     {
         if (wavepointIndex >= Waypoints.points.Length - 1)
         {

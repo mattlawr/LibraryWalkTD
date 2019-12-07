@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     public float speed = 10f;
 
     private Transform target;
-    private int wavepointIndex = 0;
+    public int wavepointIndex = 0;
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void GetNextWaypoint()
+    public void GetNextWaypoint()
     {
         if (wavepointIndex >= Waypoints.points.Length - 1)
         {

@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 
-public class Clique : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public int health = 30;
-    public float speed = 5f;
+    public int health = 10;
+    public float speed = 10f;
 
-    public Transform target;
-    public int wavepointIndex = 0;
-
-    // Clique splits up into individuals when clique health is depleted
-    public Transform individual;
-    Enemy test;
+    private Transform target;
+    private int wavepointIndex = 0;
 
     private void Start()
     {
@@ -21,14 +17,6 @@ public class Clique : MonoBehaviour
     {
         if (health <= 0)
         {
-            Vector3 position = transform.position;
-            Quaternion rotation = transform.rotation;
-            int wavepointIndex = transform.wavepointIndex;
-            
-            // Need to add a delay so that transform can still be used
-            Instantiate(individual, position, rotation);
-            individual.
-            // Delay here
             Destroy(gameObject);
         }
 
