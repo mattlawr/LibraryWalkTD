@@ -1,32 +1,22 @@
 ﻿using UnityEngine;
 
-public class Clique : MonoBehaviour
+public class SpawnEnemy : MonoBehaviour
 {
-    public int health = 30;
-    public float speed = 5f;
+    public int health = 10;
+    public float speed = 10f;
 
-    public Transform target;
+    private Transform target;
     public int wavepointIndex = 0;
-
-    // Clique splits up into individuals when clique health is depleted
-    public SpawnEnemy individual;
 
     private void Start()
     {
-        target = Waypoints.points[0];
+        target = Waypoints.points[wavepointIndex];
     }
 
     private void Update()
     {
         if (health <= 0)
         {
-            Vector3 position = transform.position;
-            Quaternion rotation = transform.rotation;
-
-            // Need to add a delay so that transform can still be used
-            //SpawnEnemy normalEnemy = Instantiate(individual, position, rotation) as SpawnEnemy;
-            //normalEnemy.wavepointIndex = wavepointIndex;
-            // Delay here
             Destroy(gameObject);
             return;
         }
@@ -34,13 +24,14 @@ public class Clique : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
+
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             GetNextWaypoint();
         }
     }
 
-    void GetNextWaypoint()
+    public void GetNextWaypoint()
     {
         if (wavepointIndex >= Waypoints.points.Length - 1)
         {
