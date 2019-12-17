@@ -22,11 +22,10 @@ public class Clique : MonoBehaviour
         {
             Vector3 position = transform.position;
             Quaternion rotation = transform.rotation;
-            
+
             // Need to add a delay so that transform can still be used
-            Instantiate(individual, position, rotation);
-            individual.SetWaypoint(wavepointIndex);
-            print(wavepointIndex);
+            Enemy normalEnemy = Instantiate(individual, position, rotation) as Enemy;
+            normalEnemy.wavepointIndex = wavepointIndex;
             // Delay here
             Destroy(gameObject);
         }
