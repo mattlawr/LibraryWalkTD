@@ -26,6 +26,7 @@ public class Clique : MonoBehaviour
             // Need to add a delay so that transform can still be used
             SpawnEnemy normalEnemy = Instantiate(individual, position, rotation) as SpawnEnemy;
             normalEnemy.wavepointIndex = wavepointIndex;
+
             // Delay here
             Destroy(gameObject);
             return;
