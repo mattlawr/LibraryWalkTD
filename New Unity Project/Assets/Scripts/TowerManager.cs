@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
+    /* ***INCOMPLETE***
     //for all towers
     public float radius;
 
@@ -25,7 +26,7 @@ public class TowerManager : MonoBehaviour
         current_enemy_list.Remove(enemy.gameObject);
     }
 
-    /* Basic tower */
+    // Basic tower
     private void attack_enemy(){
         Enemy enemy = current_enemy_list[0];
         Bullet bullet = new Bullet(enemy, fire_rate, damage);
@@ -51,4 +52,5 @@ public class TowerManager : MonoBehaviour
 
        timer++;
     }
+    */
 }
