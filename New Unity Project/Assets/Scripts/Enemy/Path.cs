@@ -8,6 +8,7 @@
  */
 public class Path : MonoBehaviour
 {
+    [System.NonSerialized]
     public Transform[] points;
 
     void Awake()
