@@ -8,7 +8,11 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sprite;   // To flip the sprite depending on the direction
 
     public int health = 10;
-    public float speed = 10f;
+    public int shield = 0;  // For headphone users
+    public float speed = 10f;   // Control how fast this enemy type is
+
+    int hp = 1;
+    //int shp = 0; // For shields! (implement later!)
 
     private Path path;
     private Transform target;
@@ -17,16 +21,11 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         target = path.points[0];
+        hp = health;
     }
 
     private void Update()
     {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         Vector3 dir = target.position - transform.position; // Direction of movement
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);  // Move enemy
 
@@ -34,6 +33,17 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             GetNextWaypoint();
+        }
+    }
+
+    public void TakeDamage(int d)
+    {
+        hp -= d;    // Take d amount of damage
+
+        if (hp <= 0)
+        {
+            // Do death FX
+            Destroy(gameObject);
         }
     }
 
