@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /**
+ * DragUI.cs
  * Class that handles general drag and drop interaction for gameplay.
  * This script should allow towers to be moved and towers to be created from the toolbar.
  * By Matthew Lawrence
