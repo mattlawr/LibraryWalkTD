@@ -17,4 +17,5 @@ As a note: the Unity project was giving us some technical issues, so the team wa
 - Polish!
 
 ## Images:
+![mockup example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-29_gTest.png)
 ![waypoint example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-27_enemyPath.png)
