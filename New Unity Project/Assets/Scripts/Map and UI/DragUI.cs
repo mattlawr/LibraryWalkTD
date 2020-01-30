@@ -14,7 +14,7 @@ public class DragUI : MonoBehaviour
     , IPointerUpHandler
     , IDragHandler
 {
-    static readonly float Y_MIN = -2f;
+    static readonly float Y_MIN = -8f;
 
     [Tooltip("The GameObject for this element to instantiate when dropped (leave null to target this GameObject).")]
     public GameObject drop = null;

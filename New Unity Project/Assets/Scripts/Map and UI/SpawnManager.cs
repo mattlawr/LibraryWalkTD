@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Path[] paths;// Generate randomly...?
-    public float rate = 5f;// 1 enemy every x seconds
+    public Path[] paths;    // The set of Paths for this level. ?Generate based on children?
+    public float rate = 5f; // 1 enemy every x seconds
     
-    public Enemy enemy;// Use random enemy from array ***
+    public Enemy enemy; // Use random enemy from array ***
 
     private float rateTimer = 0f;
 
@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
 
         Path currPath = paths[i];   // Random path
 
-        Enemy e = Instantiate(enemy, currPath.points[0].transform.position, currPath.points[0].transform.rotation, null);
+        Enemy e = Instantiate(enemy, currPath.transform.position, currPath.transform.rotation, null);
 
         e.SetPath(currPath);
     }
