@@ -10,13 +10,13 @@ Students act as enemies, booths and flyer people act as towers.
 As a note: the Unity project was giving us some technical issues, so the team was idle for a while. Just contact the new programming lead, Matthew (mattblawr@gmail.com) for inquiries!
 
 ## TODO:
-- ~~Finish enemy pathing (waypoints) and spawning~~ *MOSTLY DONE*
+- ~~Finish enemy pathing (waypoints) and spawning~~
 - Finish student booth (tower) prefab with shooting functionality
-- Integrate art assets into project
+- ~~Integrate art assets into project~~
 - Implement enemy pathfinding (around towers)
 - Determine game over conditions, score counter...?
 - Finish map tilemap
-- Polish! (Menus, sound effects)
+- Polish! (Menus, sound effects, music)
 
 ## Images:
 ![mockup example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-29_gTest.png)
