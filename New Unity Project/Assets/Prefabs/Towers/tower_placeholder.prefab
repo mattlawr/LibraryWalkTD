@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4255621729892983545}
   - component: {fileID: 4255621729892983544}
+  - component: {fileID: -2073851957260739845}
+  - component: {fileID: -3644668696406456979}
   - component: {fileID: 4255621729892983546}
   m_Layer: 0
   m_Name: tower_placeholder
@@ -81,6 +83,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2073851957260739845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255621729892983550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb6db2b7426cc343af9e66e0900b012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  attackDelay: 0.5
+  bulletPrefab: {fileID: 1671905995868047223, guid: e28bb3e6fa9cde242864b047b1ad8c35,
+    type: 3}
+--- !u!58 &-3644668696406456979
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255621729892983550}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!61 &4255621729892983546
 BoxCollider2D:
   m_ObjectHideFlags: 0
