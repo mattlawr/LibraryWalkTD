@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ * Bullet.cs
+ * Author: Matthew Lawrence
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,6 +46,10 @@ public class Bullet : MonoBehaviour
         this.target = target;
     }
 
+    /// <summary>
+    /// Deal damage and remove self from existence.
+    /// </summary>
+    /// <param name="hit">Target to deal damage to.</param>
     void HitTarget(Transform hit)
     {
         Enemy enemy = hit.transform.GetComponent<Enemy>();

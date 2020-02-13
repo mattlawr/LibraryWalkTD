@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 256778500}
   - component: {fileID: 256778501}
+  - component: {fileID: 256778502}
   m_Layer: 0
   m_Name: _paths
   m_TagString: Untagged
@@ -305,8 +306,23 @@ MonoBehaviour:
   paths:
   - {fileID: 396782039}
   - {fileID: 142087135}
-  rate: 1
-  enemy: {fileID: 5484086728967250806, guid: 42f6695945b2094469191094482e5c43, type: 3}
+  spawnRate: 0
+  enemyPrefab: {fileID: 5484086728967250806, guid: 42f6695945b2094469191094482e5c43,
+    type: 3}
+--- !u!114 &256778502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256778499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0b6030ac608a5499eab7e45b2e2288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenWaves: 5.5
+  timerText: {fileID: 0}
 --- !u!224 &298964607 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1355895978291369856, guid: 06f6aeccbf9f18842ae45aceac0990c3,
@@ -647,7 +663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000975236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.4, y: 0.3, z: -10}
+  m_LocalPosition: {x: 11.4, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
