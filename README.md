@@ -11,12 +11,12 @@ As a note: the Unity project was giving us some technical issues, so the team wa
 
 ## TODO:
 - ~~Finish enemy pathing (waypoints) and spawning~~
-- Finish student booth (tower) prefab with shooting functionality
+- ~~Finish student booth (tower) prefab with shooting functionality~~
 - ~~Integrate art assets into project~~
 - Implement enemy pathfinding (around towers)
-- Determine game over conditions, score counter...?
+- Determine game over conditions, score counter...
 - Finish map tilemap
-- Polish! (Menus, sound effects, music)
+- Polish! (Menus, sound effects, music, table upgrades, etc.)
 
 ## Images:
 ![mockup example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-29_gTest.png)
