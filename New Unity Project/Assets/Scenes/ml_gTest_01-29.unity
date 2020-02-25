@@ -691,6 +691,28 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3550623339729443878, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+        type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 4255621729892983550, guid: ede7dad8ecb749541927681fdb98d26d,
+        type: 3}
+    - target: {fileID: 3550623339713850350, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+        type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 4255621729892983550, guid: 98d117469fbfa454eb75c49add04a24f,
+        type: 3}
+    - target: {fileID: 1436373090834541688, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 4a27501b7a58d4b488f5ccbb13d34a4b, type: 3}
+    - target: {fileID: 1436373090850134960, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: b20313d767cc01e409fc516eeef23da4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b5ca514e0824e41a8e5fb000f734dc, type: 3}
 --- !u!224 &1466838629 stripped

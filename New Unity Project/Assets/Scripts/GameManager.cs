@@ -10,6 +10,22 @@ public class GameManager : MonoBehaviour
 
     private int hp = 100;
 
+    public static GameManager instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +54,16 @@ public class GameManager : MonoBehaviour
         hp -= damage;
 
         text_health.text = "HP: " + hp;
+
+        if (hp <= 0)
+        {
+            // Die
+        }
     }
     // TODO: use this method!
+
+    public void ScoreIncrease(int amt)
+    {
+        // ???????
+    }
 }

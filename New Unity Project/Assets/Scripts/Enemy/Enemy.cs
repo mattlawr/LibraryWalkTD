@@ -73,6 +73,10 @@ public class Enemy : MonoBehaviour
         if (pointIndex >= path.points.Length - 1)
         {
             Destroy(gameObject);
+            // LAST WAYPOINT in array
+
+            GameManager.instance.LoseHealth(1);
+
             return;
         }
         pointIndex++;
