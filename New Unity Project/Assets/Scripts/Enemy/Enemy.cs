@@ -31,7 +31,11 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        target = path.points[0];
+        if (path)
+        {
+            target = path.points[0];
+        }
+
         hp = health;
 
         if (!sprite)
@@ -42,6 +46,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (!target) { return; }
+
         Vector3 dir = target.position - transform.position; // Direction of movement
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);  // Move enemy
 
