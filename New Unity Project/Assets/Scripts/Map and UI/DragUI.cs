@@ -1,14 +1,17 @@
-﻿using System.Collections;
+﻿/**
+ * DragUI.cs
+ * Class that handles general drag and drop interaction for gameplay.
+ * This script should allow towers to be moved and towers to be created from the toolbar.
+ * Author: Matthew Lawrence
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-/**
- * DragUI.cs
- * Class that handles general drag and drop interaction for gameplay.
- * This script should allow towers to be moved and towers to be created from the toolbar.
- * By Matthew Lawrence
- */
+/// <summary>
+/// Attatch this class to an object that needs to be dragged and dropped around the screen.
+/// </summary>
 public class DragUI : MonoBehaviour
     , IPointerDownHandler
     , IPointerUpHandler
@@ -118,6 +121,7 @@ public class DragUI : MonoBehaviour
     }
 }
 
+// Incomplete class...
 class Stretch
 {
     private float strength;
@@ -138,5 +142,5 @@ class Stretch
 
     }
 
-    // TBD
+    // TODO
 }

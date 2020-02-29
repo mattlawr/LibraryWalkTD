@@ -26,9 +26,9 @@ public class TurretBase : MonoBehaviour
             {
                 GameObject tempBulletHandler;
                 tempBulletHandler = Instantiate(Bullet, transform.position, transform.rotation) as GameObject;
-                BulletPathing tempBulletPathing;
-                tempBulletPathing = tempBulletHandler.GetComponent<BulletPathing>();
-                tempBulletPathing.setTarg(target);
+                //BulletPathing tempBulletPathing;
+                //tempBulletPathing = tempBulletHandler.GetComponent<BulletPathing>();
+                //tempBulletPathing.setTarg(target);
                 //set the bullets to yeet themeselves 
                 Destroy(tempBulletHandler, 3.0f);
             }

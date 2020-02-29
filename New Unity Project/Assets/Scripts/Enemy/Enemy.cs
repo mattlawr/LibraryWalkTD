@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-/**
+﻿/**
  * Enemy.cs
  * Handles all enemy logic:
  *      - follows a Path from one edge of the screen to the other
@@ -8,13 +6,20 @@
  *      - ?other features? i.e. slow down when hit?
  * 
  * Will be spawned by a SpawnManager class.
+ * 
+ * Author: Matthew Lawrence and Enemy/Tower Team
  */
+using UnityEngine;
+
+/// <summary>
+/// Class for objects to decide where to move next, when to take damage, when to die, etc.
+/// </summary>
 public class Enemy : MonoBehaviour
 {
     public SpriteRenderer sprite;   // To flip the sprite depending on the direction
 
     public int health = 10;
-    public int shield = 0;  // For headphone users
+    //public int shield = 0;  // For headphone users (not implemented)
     public float speed = 10f;   // Control how fast this enemy type is
 
     int hp = 1; // so that "health" acts as a maximum health
@@ -94,10 +99,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // Called when spawned by SpawnManager, which assigns THIS enemy's destined path
+    // Called when spawned by SpawnManager...
+    /// <summary>
+    /// Assign the destined path, and start following it from the beginning.
+    /// </summary>
+    /// <param name="p">The path for this enemy to keep track of</param>
     public void SetPath(Path p)
     {
         path = p;
-        pointIndex = 0;
+        SetPath();  // Begins path
+    }
+    void SetPath()
+    {
+        pointIndex = 0; // Resets waypoint index
     }
 }
