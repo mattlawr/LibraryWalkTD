@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0b6030ac608a5499eab7e45b2e2288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenWaves: 5.5
-  timerText: {fileID: 0}
+  timeBetweenWaves: 6
+  timerText: {fileID: 1466838630}
 --- !u!114 &344259707 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3550623340305213011, guid: a4b5ca514e0824e41a8e5fb000f734dc,
@@ -226,6 +226,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 602056fd067164043982960a55ce823a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &488629410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3550623340622074541, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466838628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &638259921 stripped
@@ -454,6 +466,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text_health: {fileID: 638259921}
   text_time: {fileID: 344259707}
+  text_currency: {fileID: 488629410}
+  text_level: {fileID: 1262420939}
+--- !u!114 &1262420939 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3550623340418568577, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466838628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1466838628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,32 +560,32 @@ PrefabInstance:
     - target: {fileID: 3550623340399961376, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: -910
       objectReference: {fileID: 0}
     - target: {fileID: 3550623340399961376, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: -422
       objectReference: {fileID: 0}
     - target: {fileID: 3550623340399961376, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3550623340399961376, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3550623340399961376, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3550623340399961376, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3550623340399961376, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
@@ -691,39 +717,29 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3550623339729443878, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+    - target: {fileID: 5319421171596227168, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+        type: 3}
+      propertyPath: towerType
+      value: 
+      objectReference: {fileID: -2073851957260739845, guid: ede7dad8ecb749541927681fdb98d26d,
+        type: 3}
+    - target: {fileID: 5319421171596227168, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: drop
       value: 
       objectReference: {fileID: 4255621729892983550, guid: ede7dad8ecb749541927681fdb98d26d,
         type: 3}
-    - target: {fileID: 3550623339713850350, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+    - target: {fileID: 5319421171580356008, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
       propertyPath: drop
       value: 
       objectReference: {fileID: 4255621729892983550, guid: 98d117469fbfa454eb75c49add04a24f,
         type: 3}
-    - target: {fileID: 1436373090834541688, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+    - target: {fileID: 5319421171580356008, guid: a4b5ca514e0824e41a8e5fb000f734dc,
         type: 3}
-      propertyPath: m_Texture
+      propertyPath: towerType
       value: 
-      objectReference: {fileID: 2800000, guid: 4a27501b7a58d4b488f5ccbb13d34a4b, type: 3}
-    - target: {fileID: 1436373090850134960, guid: a4b5ca514e0824e41a8e5fb000f734dc,
-        type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: b20313d767cc01e409fc516eeef23da4, type: 3}
-    - target: {fileID: 1913523534343472374, guid: a4b5ca514e0824e41a8e5fb000f734dc,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4a27501b7a58d4b488f5ccbb13d34a4b,
-        type: 3}
-    - target: {fileID: 1913523534327886654, guid: a4b5ca514e0824e41a8e5fb000f734dc,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b20313d767cc01e409fc516eeef23da4,
+      objectReference: {fileID: -2073851957260739845, guid: 98d117469fbfa454eb75c49add04a24f,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b5ca514e0824e41a8e5fb000f734dc, type: 3}
@@ -733,6 +749,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1466838628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466838630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3051393122240695366, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466838628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1473743830
 PrefabInstance:
   m_ObjectHideFlags: 0

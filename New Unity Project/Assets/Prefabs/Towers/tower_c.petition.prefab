@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb6db2b7426cc343af9e66e0900b012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 100
   radius: 5
   attackDelay: 0.2
   bulletPrefab: {fileID: 1671905995868047223, guid: e28bb3e6fa9cde242864b047b1ad8c35,

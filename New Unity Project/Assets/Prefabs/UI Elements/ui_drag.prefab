@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 1355895978291369856}
   - component: {fileID: 1355895978291369854}
   - component: {fileID: 1355895978291369855}
-  - component: {fileID: 298964608}
+  - component: {fileID: 8688631439936616646}
   m_Layer: 5
   m_Name: ui_drag
   m_TagString: Untagged
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &298964608
+--- !u!114 &8688631439936616646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,8 +157,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1355895978291369857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 216c36ae07ec01145b610d005f8606c6, type: 3}
+  m_Script: {fileID: 11500000, guid: d66722c7cc558164e8f151a7d65e21c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 4255621729892983550, guid: cd98fb4afb567924daf1da9ae40af4b6, type: 3}
   carry: {fileID: 2987027271021922542, guid: e8844e7996da1cd4fb9bc020855a2887, type: 3}
+  towerType: {fileID: -2073851957260739845, guid: cd98fb4afb567924daf1da9ae40af4b6,
+    type: 3}

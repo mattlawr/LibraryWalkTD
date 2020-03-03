@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public Text text_health;
     public Text text_time;
+    public Text text_currency;
+    public Text text_level;
 
-    private int hp = 100;
+    private int hp = 5;
+    private int staff = 20;
 
     public static GameManager instance = null;
 
@@ -29,7 +32,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoseHealth(0);
+        AddStaff(0);
+        UpdateLevel(1);
     }
 
     // Update is called once per frame
@@ -57,13 +62,33 @@ public class GameManager : MonoBehaviour
 
         if (hp <= 0)
         {
-            // Die
+            // LOSE
+            print("GAME OVER");
         }
     }
     // TODO: use this method!
 
-    public void ScoreIncrease(int amt)
+    /// <summary>
+    /// Updates text object from spawn manager.
+    /// </summary>
+    /// <param name="lvl">The level to display</param>
+    public void UpdateLevel(int lvl)
     {
-        // ???????
+        text_level.text = "LVL: " + lvl;
+    }
+
+    /// <summary>
+    /// Increases staff resources for player to "buy" towers.
+    /// </summary>
+    /// <param name="amt">Amount to increase.</param>
+    public void AddStaff(int amt)
+    {
+        staff += amt;
+
+        text_currency.text = "Staff: " + staff;
+    }
+    public int GetStaff()
+    {
+        return staff;
     }
 }

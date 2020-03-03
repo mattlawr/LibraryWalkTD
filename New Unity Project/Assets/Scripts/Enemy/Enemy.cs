@@ -61,16 +61,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // Called by bullets when hit
+    /// <summary>
+    /// Called by bullets when hit
+    /// </summary>
+    /// <param name="dmg">Amount of enemy health to lose.</param>
     public void TakeDamage(int dmg)
     {
         hp -= dmg;    // Take dmg amount of damage
 
         if (hp <= 0)
         {
-            // Do death FX
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+
+        // Reward for player
+        GameManager.instance.AddStaff(1);
     }
 
     // Called when target is reached
@@ -78,10 +88,8 @@ public class Enemy : MonoBehaviour
     {
         if (pointIndex >= path.points.Length - 1)
         {
-            Destroy(gameObject);
             // LAST WAYPOINT in array
-
-            GameManager.instance.LoseHealth(1);
+            FinishPath();
 
             return;
         }
@@ -122,5 +130,15 @@ public class Enemy : MonoBehaviour
     void SetPath()
     {
         pointIndex = 0; // Resets waypoint index
+    }
+
+    /// <summary>
+    /// Punishes player and gets rid of enemy off screen.
+    /// </summary>
+    void FinishPath()
+    {
+        Destroy(gameObject);
+
+        GameManager.instance.LoseHealth(1);
     }
 }

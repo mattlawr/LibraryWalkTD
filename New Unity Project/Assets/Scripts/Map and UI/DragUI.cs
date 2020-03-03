@@ -54,6 +54,8 @@ public class DragUI : MonoBehaviour
     /// </summary>
     void Holding(PointerEventData e)
     {
+        if (!held) { return; }
+
         Vector3 pos = PointerPos(e.position);
         held.localPosition = pos;
 
@@ -71,7 +73,7 @@ public class DragUI : MonoBehaviour
     /// <summary>
     /// Called when the user needs to grab the target for this object.
     /// </summary>
-    public void Pickup()
+    public virtual void Pickup()
     {
         initialPos = this.transform.position;
 
@@ -91,6 +93,8 @@ public class DragUI : MonoBehaviour
     /// </summary>
     void Drop(Vector3 pos)
     {
+        if (!held && carry) { return; }
+
         Transform t = this.transform;// Target this object
 
         if (carry && held) { Destroy(held.gameObject); }// Remove temp obj

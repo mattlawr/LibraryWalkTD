@@ -96,9 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 3216137001544458124}
-  health: 3
-  shield: 0
-  speed: 5
+  health: 2
+  speed: 4
 --- !u!58 &-3150370788130316868
 CircleCollider2D:
   m_ObjectHideFlags: 0
