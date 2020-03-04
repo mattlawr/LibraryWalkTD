@@ -14,9 +14,11 @@ As a note: the Unity project was giving us some technical issues, so the team wa
 - ~~Finish student booth (tower) prefab with shooting functionality~~
 - ~~Integrate art assets into project~~
 - Implement enemy pathfinding (around towers)
-- Determine game over conditions, score counter...
-- Finish map tilemap
-- Polish! (Menus, sound effects, music, table upgrades, etc.)
+- Implement new tower behaviors (petitioner, AoE attacks)
+- ~~Determine game over conditions (health), score counter~~
+- Finish map tilemap *Mostly done*
+- Implement map drag+scroll
+- Polish! (Menus, sound effects, music, table upgrades (?), etc.)
 
 ## Images:
 ![mockup example 2](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/02-20_gTest.png)
