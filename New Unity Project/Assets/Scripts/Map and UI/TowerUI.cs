@@ -6,6 +6,9 @@ public class TowerUI : DragUI
 {
     public Tower towerType;
 
+    /// <summary>
+    /// Pickup tower only if can be afforded by player.
+    /// </summary>
     public override void Pickup()
     {
         int currency = GameManager.instance.GetStaff();
