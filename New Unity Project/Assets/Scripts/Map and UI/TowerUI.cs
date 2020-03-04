@@ -1,24 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerUI : DragUI
 {
     public Tower towerType;
 
-    /// <summary>
-    /// Pickup tower only if can be afforded by player.
-    /// </summary>
-    public override void Pickup()
+    protected override void Holding(PointerEventData e, bool canDrop)
     {
-        int currency = GameManager.instance.GetStaff();
-
-        if (currency < towerType.cost)
+        if (GetCurrency() < towerType.cost)
         {
-            return;
+            canDrop = false;
         }
 
-        GameManager.instance.AddStaff(-towerType.cost);
-        base.Pickup();
+        base.Holding(e, canDrop);
+    }
+
+    /// <summary>
+    /// Drop tower only if construction can be afforded by player.
+    /// </summary>
+    protected override bool Drop(Vector3 pos)
+    {
+        // Check if player can afford
+        if (GetCurrency() < towerType.cost)
+        {
+            if (carry && held) { Destroy(held.gameObject); }    // Remove temp obj
+            return false;
+        }
+
+        bool result = base.Drop(pos);   // Try to drop tower
+
+        if (result)
+        {
+            // Subtract cost if success 
+            GameManager.instance.AddStaff(-towerType.cost);
+        }
+
+        return result;
+    }
+
+    int GetCurrency()
+    {
+        return GameManager.instance.GetStaff();
     }
 }

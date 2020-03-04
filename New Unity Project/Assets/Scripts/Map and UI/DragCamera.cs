@@ -71,9 +71,9 @@ public class DragCamera : MonoBehaviour
     {
         if (!held) { return; }
 
-        Vector3 delta = Input.mousePosition - initialPos;
+        Vector3 delta = PointerPos(Input.mousePosition) - PointerPos(initialPos);
 
-        transform.position = initCamera - (delta * strength / 2f);
+        transform.position = initCamera - (delta * strength);
     }
 
     /// <summary>
