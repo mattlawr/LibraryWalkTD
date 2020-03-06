@@ -1,7 +1,6 @@
 ﻿/**
- * DragUI.cs
- * Class that handles general drag and drop interaction for gameplay.
- * This script should allow towers to be moved and towers to be created from the toolbar.
+ * DragCamera.cs
+ * Class that handles camera dragging and zooming.
  * Author: Matthew Lawrence
  */
 using System.Collections;
@@ -10,15 +9,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// Attatch this class to an object that needs to be dragged and dropped around the screen.
+/// Attatch this class to a camera that can be dragged around and zoomed in/out.
 /// </summary>
 public class DragCamera : MonoBehaviour
     /*, IPointerDownHandler
     , IPointerUpHandler
     , IDragHandler*/
 {
-    public float strength = 1f;
-    
+    public float dragStrength = 1f;
+    public float zoomStrength = 1f;
+
+    public float minZoom = 5f;
+    public float maxZoom = 20f;
+
+
     private bool held = false;
     private Vector3 initialPos;
     private Vector3 initCamera;
@@ -33,6 +37,13 @@ public class DragCamera : MonoBehaviour
 
     private void Update()
     {
+        // Zooming
+        float fov = cam.orthographicSize;
+        fov -= Input.GetAxis("Mouse ScrollWheel") * zoomStrength * 2f;
+        fov = Mathf.Clamp(fov, minZoom, maxZoom);
+        cam.orthographicSize = fov;
+
+        // Screen clicking
         if (Input.GetMouseButtonDown(1))
         {
             Down();
@@ -73,7 +84,7 @@ public class DragCamera : MonoBehaviour
 
         Vector3 delta = PointerPos(Input.mousePosition) - PointerPos(initialPos);
 
-        transform.position = initCamera - (delta * strength);
+        transform.position = initCamera - (delta * dragStrength);
     }
 
     /// <summary>
