@@ -20,18 +20,19 @@ public class SpawnManager : MonoBehaviour
     /// Spawn 1 enemy every x seconds (set to zero for no constant students).
     /// </summary>
     public float spawnRate = 5f;
-    
+
     /// <summary>
     /// The prefab to spawn at a given Path.
     /// </summary>
-    public Enemy enemyPrefab;   // TODO: Instead use an array of different enemy types!
+    public int totalEnemies = 2;
+    public Enemy[] enemyPrefabs;
 
     private float rateTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -56,8 +57,9 @@ public class SpawnManager : MonoBehaviour
         int i = Random.Range(0, paths.Length);
         Path currPath = paths[i];
 
-        // Spawn the new enemy object
-        Enemy en = Instantiate(enemyPrefab, currPath.transform.position, currPath.transform.rotation, null);
+        // Spawn random enemy object
+        int randomEnemy = Random.Range(0, totalEnemies); // gets random enemy
+        Enemy en = Instantiate(enemyPrefabs[randomEnemy], currPath.transform.position, currPath.transform.rotation, null);
 
         // Tell the enemy to follow the chosen Path
         en.SetPath(currPath);

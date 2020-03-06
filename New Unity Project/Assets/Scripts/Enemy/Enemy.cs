@@ -4,12 +4,13 @@
  *      - follows a Path from one edge of the screen to the other
  *      - takes damage and dies when health falls below zero
  *      - ?other features? i.e. slow down when hit?
- * 
+ *
  * Will be spawned by a SpawnManager class.
- * 
+ *
  * Author: Matthew Lawrence and Enemy/Tower Team
  */
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class for objects to decide where to move next, when to take damage, when to die, etc.
@@ -18,11 +19,13 @@ public class Enemy : MonoBehaviour
 {
     public SpriteRenderer sprite;   // To flip the sprite depending on the direction
 
-    public int health = 10;
+    public float health = 10f;
     //public int shield = 0;  // For headphone users (not implemented)
+    public Image healthBar; //enemy health bar
+
     public float speed = 10f;   // Control how fast this enemy type is
 
-    int hp = 1; // so that "health" acts as a maximum health
+    float hp = 1; // so that "health" acts as a maximum health
     //int shp = 0; // For shields! (implement later!)
 
     private Path path;  // Holds all the points in this path
@@ -59,6 +62,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         hp -= dmg;    // Take dmg amount of damage
+
+        healthBar.fillAmount = hp / health; // changes enemy health bar image according to damage taken
 
         if (hp <= 0)
         {
