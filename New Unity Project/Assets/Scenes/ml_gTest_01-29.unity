@@ -182,8 +182,10 @@ MonoBehaviour:
   - {fileID: 396782039}
   - {fileID: 142087135}
   spawnRate: 0
-  enemyPrefab: {fileID: 5484086728967250806, guid: 42f6695945b2094469191094482e5c43,
-    type: 3}
+  totalEnemies: 2
+  enemyPrefabs:
+  - {fileID: 5484086728967250806, guid: 42f6695945b2094469191094482e5c43, type: 3}
+  - {fileID: 5484086728967250806, guid: bea1b76fc3ee2114896b8609d8487c3c, type: 3}
 --- !u!114 &256778502
 MonoBehaviour:
   m_ObjectHideFlags: 0
