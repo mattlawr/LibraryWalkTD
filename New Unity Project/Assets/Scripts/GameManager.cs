@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class GameManager : MonoBehaviour
     public Text text_time;
     public Text text_currency;
     public Text text_level;
+    public GameObject ui_gameOver;
 
     private int hp = 5;
     private int staff = 20;
+    private bool gameover = false;
 
     public static GameManager instance = null;
 
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
@@ -62,11 +65,25 @@ public class GameManager : MonoBehaviour
 
         if (hp <= 0)
         {
+            hp = 0;
+
             // LOSE
-            print("GAME OVER");
+            GameOver();
         }
     }
     // TODO: use this method!
+
+    void GameOver()
+    {
+        gameover = true;
+
+        ui_gameOver.SetActive(true);    // Show the game over screen (over the map)
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     /// <summary>
     /// Updates text object from spawn manager.
@@ -74,6 +91,8 @@ public class GameManager : MonoBehaviour
     /// <param name="lvl">The level to display</param>
     public void UpdateLevel(int lvl)
     {
+        if (gameover) { return; }
+
         text_level.text = "LVL: " + lvl;
     }
 
@@ -83,6 +102,8 @@ public class GameManager : MonoBehaviour
     /// <param name="amt">Amount to increase.</param>
     public void AddStaff(int amt)
     {
+        if(gameover) { return; }
+
         staff += amt;
 
         text_currency.text = "Staff: " + staff;
