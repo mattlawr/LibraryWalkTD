@@ -25,7 +25,7 @@ public class DragUI : MonoBehaviour
     [Tooltip("The GameObject for this element to temporarily instantiate when being dragged (leave null to target this GameObject).")]
     public GameObject carry = null;
 
-    private Transform held = null;
+    protected Transform held = null;
     private Vector3 initialPos;
 
     private void Update()
@@ -38,6 +38,11 @@ public class DragUI : MonoBehaviour
      */
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
+        if(eventData.button == PointerEventData.InputButton.Right)
+        {
+            return;
+        }
+
         Pickup();
     }
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
@@ -46,32 +51,38 @@ public class DragUI : MonoBehaviour
     }
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        Holding(eventData);
+        Holding(eventData, true);
     }
 
     /// <summary>
     /// Updates the position of the indicated transform to match the mouse position.
     /// </summary>
-    void Holding(PointerEventData e)
+    protected virtual void Holding(PointerEventData e, bool canDrop)
     {
+        if (!held) { return; }
+
         Vector3 pos = PointerPos(e.position);
         held.localPosition = pos;
 
         SpriteRenderer sr = held.GetComponent<SpriteRenderer>();
-        if (pos.y < Y_MIN && sr)
+        if (sr)
         {
-            //print(pos);
-            sr.color = Color.red;
-        } else if(sr)
-        {
-            sr.color = Color.green;
+            if (pos.y < Y_MIN || !canDrop)
+            {
+                //print(pos);
+                sr.color = Color.red;
+            }
+            else
+            {
+                sr.color = Color.green;
+            }
         }
     }
 
     /// <summary>
     /// Called when the user needs to grab the target for this object.
     /// </summary>
-    public void Pickup()
+    protected virtual void Pickup()
     {
         initialPos = this.transform.position;
 
@@ -89,8 +100,10 @@ public class DragUI : MonoBehaviour
     /// <summary>
     /// Places the target at the position of the mouse.
     /// </summary>
-    void Drop(Vector3 pos)
+    protected virtual bool Drop(Vector3 pos)
     {
+        if (!held && carry) { return false; }
+
         Transform t = this.transform;// Target this object
 
         if (carry && held) { Destroy(held.gameObject); }// Remove temp obj
@@ -98,16 +111,18 @@ public class DragUI : MonoBehaviour
         {
             GameObject c = GameObject.Instantiate(drop, null);// Instantiate drop object
             t = c.transform;
-            if (!carry) { this.transform.localPosition = initialPos; }
-        } else if(pos.y < Y_MIN)
+            if (!carry) {
+                this.transform.localPosition = initialPos;
+            }
+        }
+        else if(pos.y < Y_MIN)
         {
             //cancel drop and cost
-            return;
+            return false;
         }
 
-        // Subtract COST of tower/movement here...
-
         t.localPosition = pos;
+        return true;
     }
 
     /// <summary>

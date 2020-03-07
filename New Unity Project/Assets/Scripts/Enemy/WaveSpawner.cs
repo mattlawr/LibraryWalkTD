@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(SpawnManager))]
 public class WaveSpawner : MonoBehaviour
 {
-    public float timeBetweenWaves = 5.5f;
+    public int timeBetweenWaves = 5;
 
     public Text timerText;
 
@@ -24,19 +24,22 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update ()
     {
-        if ( countdown <= 0f )
-        {
-            // Start co-routine for a single wave
-            StartCoroutine( SpawnWave() );
-
-            countdown = timeBetweenWaves; // Reset countdown
-        }
-
         // Decrease countdown every few frames
         countdown -= Time.deltaTime;
 
+        string nextWave = Mathf.Floor(countdown % 60).ToString("0");
+
+        if ( countdown <= 0f )
+        {
+            countdown = timeBetweenWaves - Time.deltaTime; // Reset countdown
+            nextWave = 0.ToString();
+
+            // Start co-routine for a single wave
+            StartCoroutine( SpawnWave() );
+        }
+
         if (!timerText) { return; }
-        timerText.text = "Next Wave: " + Mathf.Round(countdown).ToString();
+        timerText.text = nextWave;
     }
 
     IEnumerator SpawnWave ()
@@ -55,5 +58,8 @@ public class WaveSpawner : MonoBehaviour
         }
 
         waveIndex++;
+
+        // Temporary
+        GameManager.instance.UpdateLevel(waveIndex);
     }
 }

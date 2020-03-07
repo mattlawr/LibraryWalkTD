@@ -12,6 +12,9 @@ using UnityEngine;
 /// </summary>
 public class Tower : MonoBehaviour
 {
+    [Tooltip("How much this tower costs to build.")]
+    public int cost = 10;
+
     [Tooltip("How far this tower can see.")]
     public float radius;
 
