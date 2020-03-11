@@ -24,7 +24,6 @@ public class SpawnManager : MonoBehaviour
     /// <summary>
     /// The prefab to spawn at a given Path.
     /// </summary>
-    public int totalEnemies = 2;
     public Enemy[] enemyPrefabs;
 
     private float rateTimer = 0f;
@@ -58,7 +57,7 @@ public class SpawnManager : MonoBehaviour
         Path currPath = paths[i];
 
         // Spawn random enemy object
-        int randomEnemy = Random.Range(0, totalEnemies); // gets random enemy
+        int randomEnemy = Random.Range(0, enemyPrefabs.Length); // gets random enemy
         Enemy en = Instantiate(enemyPrefabs[randomEnemy], currPath.transform.position, currPath.transform.rotation, null);
 
         // Tell the enemy to follow the chosen Path

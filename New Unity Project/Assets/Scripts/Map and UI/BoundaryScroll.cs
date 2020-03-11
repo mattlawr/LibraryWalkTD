@@ -8,14 +8,14 @@ public class BoundaryScroll : MonoBehaviour
     public int speed = 10;
     private int theScreenWidth;
     private int theScreenHeight;
-    // Start is called before the first frame update
-    private Vector3 transform;
+    
+    private Vector3 newPos;
 
     void Start()
     {
         theScreenWidth = Screen.width;
         theScreenHeight = Screen.height;
-        transform = Camera.main.transform.position;
+        newPos = Camera.main.transform.position;
     }
 
     // Update is called once per frame
@@ -23,20 +23,20 @@ public class BoundaryScroll : MonoBehaviour
     {
         if (Input.mousePosition.x > theScreenWidth - Boundary && Camera.main.transform.position.x < 49.0f)
         {
-            transform.x += speed * Time.deltaTime; // move on +X axis
+            newPos.x += speed * Time.deltaTime; // move on +X axis
         }
         if (Input.mousePosition.x < 0 + Boundary && Camera.main.transform.position.x > -70.0f)
         {
-            transform.x -= speed * Time.deltaTime; // move on -X axis
+            newPos.x -= speed * Time.deltaTime; // move on -X axis
         }
         if (Input.mousePosition.y > theScreenHeight - Boundary && Camera.main.transform.position.y < 11.0f)
         {
-            transform.y += speed * Time.deltaTime; // move on +Z axis
+            newPos.y += speed * Time.deltaTime; // move on +Z axis
         }
         if (Input.mousePosition.y < 0 + Boundary && Camera.main.transform.position.y > -10.0f)
         {
-            transform.y -= speed * Time.deltaTime; // move on -Z axis
+            newPos.y -= speed * Time.deltaTime; // move on -Z axis
         }
-        Camera.main.transform.position = transform;
+        Camera.main.transform.position = newPos;
     }
 }
