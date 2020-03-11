@@ -18,11 +18,12 @@ As a note: the Unity project was giving us some technical issues, so the team wa
 - ~~Finish enemy pathing (waypoints) and spawning~~
 - ~~Finish student booth (tower) prefab with shooting functionality~~
 - ~~Integrate art assets into project~~
+- ~~Add health bars for enemies~~
 - Implement enemy pathfinding (around towers)
 - Implement new tower behaviors (petitioner, AoE attacks)
-- ~~Determine game over conditions (health), score counter~~
+- ~~Determine game over conditions (health), level counter~~
 - Finish map tilemap *Mostly done*
-- Implement map drag+scroll
+- ~~Implement map drag+scroll~~
 - Polish! (Menus, sound effects, music, table upgrades (?), etc.)
 
 ## Images:
