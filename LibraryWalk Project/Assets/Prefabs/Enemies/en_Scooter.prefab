@@ -246,7 +246,7 @@ MonoBehaviour:
   sprite: {fileID: 3216137001544458124}
   health: 3
   healthBar: {fileID: 3534943971225023369}
-  speed: 15
+  speed: 10
 --- !u!58 &368872249290005477
 CircleCollider2D:
   m_ObjectHideFlags: 0
