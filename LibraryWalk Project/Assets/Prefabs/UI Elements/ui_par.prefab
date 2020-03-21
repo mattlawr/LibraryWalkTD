@@ -842,6 +842,18 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8688631439936616646, guid: 06f6aeccbf9f18842ae45aceac0990c3,
+        type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 4255621729892983550, guid: ede7dad8ecb749541927681fdb98d26d,
+        type: 3}
+    - target: {fileID: 8688631439936616646, guid: 06f6aeccbf9f18842ae45aceac0990c3,
+        type: 3}
+      propertyPath: towerType
+      value: 
+      objectReference: {fileID: -2073851957260739845, guid: ede7dad8ecb749541927681fdb98d26d,
+        type: 3}
     - target: {fileID: 3154888747471845784, guid: 06f6aeccbf9f18842ae45aceac0990c3,
         type: 3}
       propertyPath: m_Sprite
@@ -978,11 +990,23 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8688631439936616646, guid: 06f6aeccbf9f18842ae45aceac0990c3,
+        type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 4255621729892983550, guid: 98d117469fbfa454eb75c49add04a24f,
+        type: 3}
+    - target: {fileID: 8688631439936616646, guid: 06f6aeccbf9f18842ae45aceac0990c3,
+        type: 3}
+      propertyPath: towerType
+      value: 
+      objectReference: {fileID: -2073851957260739845, guid: 98d117469fbfa454eb75c49add04a24f,
+        type: 3}
     - target: {fileID: 3154888747471845784, guid: 06f6aeccbf9f18842ae45aceac0990c3,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4a27501b7a58d4b488f5ccbb13d34a4b,
+      objectReference: {fileID: -2685421421764747627, guid: a9c3bae144c580d42ac28913f09bbd87,
         type: 3}
     - target: {fileID: 298964608, guid: 06f6aeccbf9f18842ae45aceac0990c3, type: 3}
       propertyPath: drop
@@ -1239,6 +1263,24 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8688631439936616646, guid: 06f6aeccbf9f18842ae45aceac0990c3,
+        type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 4255621729892983550, guid: cf4cf6d678575724b99db4dbdd392955,
+        type: 3}
+    - target: {fileID: 8688631439936616646, guid: 06f6aeccbf9f18842ae45aceac0990c3,
+        type: 3}
+      propertyPath: towerType
+      value: 
+      objectReference: {fileID: -2073851957260739845, guid: cf4cf6d678575724b99db4dbdd392955,
+        type: 3}
+    - target: {fileID: 3154888747471845784, guid: 06f6aeccbf9f18842ae45aceac0990c3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a27501b7a58d4b488f5ccbb13d34a4b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06f6aeccbf9f18842ae45aceac0990c3, type: 3}
 --- !u!224 &2564594554079589439 stripped

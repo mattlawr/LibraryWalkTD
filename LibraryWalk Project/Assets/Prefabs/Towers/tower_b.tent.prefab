@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb6db2b7426cc343af9e66e0900b012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 30
+  cost: 20
   radius: 15
   attackDelay: 1
   bulletPrefab: {fileID: 1671905995868047223, guid: e28bb3e6fa9cde242864b047b1ad8c35,
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.3333335, y: 4.3333335}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 0.31, y: 0.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

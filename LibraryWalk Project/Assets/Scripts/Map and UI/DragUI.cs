@@ -28,7 +28,7 @@ public class DragUI : MonoBehaviour
     protected Transform held = null;
     private Vector3 initialPos;
 
-    private void Update()
+    protected virtual void Update()
     {
 
     }
@@ -67,7 +67,7 @@ public class DragUI : MonoBehaviour
         SpriteRenderer sr = held.GetComponent<SpriteRenderer>();
         if (sr)
         {
-            if (pos.y < Y_MIN || !canDrop)
+            if (/*pos.y < Y_MIN || */!canDrop)
             {
                 //print(pos);
                 sr.color = Color.red;

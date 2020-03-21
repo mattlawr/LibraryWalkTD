@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int startStaff = 10;
     public Text text_health;
     public Text text_time;
     public Text text_currency;
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject ui_gameOver;
 
     private int hp = 5;
-    private int staff = 20;
+    private int staff = 10;
     private bool gameover = false;
 
     public static GameManager instance = null;
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        staff = startStaff;
+
         LoseHealth(0);
         AddStaff(0);
         UpdateLevel(1);

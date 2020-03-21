@@ -691,7 +691,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 82b1cd00321d63d4caa306c67b6c0ba3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.717
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1224,30 +1224,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -142.29999
       objectReference: {fileID: 0}
-    - target: {fileID: 5319421171596227168, guid: a4b5ca514e0824e41a8e5fb000f734dc,
-        type: 3}
-      propertyPath: towerType
-      value: 
-      objectReference: {fileID: -2073851957260739845, guid: ede7dad8ecb749541927681fdb98d26d,
-        type: 3}
-    - target: {fileID: 5319421171596227168, guid: a4b5ca514e0824e41a8e5fb000f734dc,
-        type: 3}
-      propertyPath: drop
-      value: 
-      objectReference: {fileID: 4255621729892983550, guid: ede7dad8ecb749541927681fdb98d26d,
-        type: 3}
-    - target: {fileID: 5319421171580356008, guid: a4b5ca514e0824e41a8e5fb000f734dc,
-        type: 3}
-      propertyPath: drop
-      value: 
-      objectReference: {fileID: 4255621729892983550, guid: 98d117469fbfa454eb75c49add04a24f,
-        type: 3}
-    - target: {fileID: 5319421171580356008, guid: a4b5ca514e0824e41a8e5fb000f734dc,
-        type: 3}
-      propertyPath: towerType
-      value: 
-      objectReference: {fileID: -2073851957260739845, guid: 98d117469fbfa454eb75c49add04a24f,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b5ca514e0824e41a8e5fb000f734dc, type: 3}
 --- !u!224 &1466838629 stripped

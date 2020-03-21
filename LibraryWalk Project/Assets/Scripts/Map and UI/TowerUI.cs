@@ -2,14 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TowerUI : DragUI
 {
     public Tower towerType;
 
+    public Image image;
+
+    public AudioSource pickupSound;
+    public AudioSource placeSound;
+
+    Color initColor;
+
+    private void Start()
+    {
+        initColor = image.color;
+    }
+
+    protected override void Update()
+    {
+        if (!CanBuy())
+        {
+            image.color = Color.black;
+        } else
+        {
+            image.color = initColor;
+        }
+
+        base.Update();
+    }
+
+    protected override void Pickup()
+    {
+        if (!CanBuy())
+        {
+            return;
+        }
+
+        base.Pickup();
+
+        pickupSound.Play();
+    }
+
     protected override void Holding(PointerEventData e, bool canDrop)
     {
-        if (GetCurrency() < towerType.cost)
+        if (!CanBuy())
         {
             canDrop = false;
         }
@@ -23,7 +61,7 @@ public class TowerUI : DragUI
     protected override bool Drop(Vector3 pos)
     {
         // Check if player can afford
-        if (GetCurrency() < towerType.cost)
+        if (!CanBuy())
         {
             if (carry && held) { Destroy(held.gameObject); }    // Remove temp obj
             return false;
@@ -35,6 +73,8 @@ public class TowerUI : DragUI
         {
             // Subtract cost if success 
             GameManager.instance.AddStaff(-towerType.cost);
+
+            placeSound.Play();
         }
 
         return result;
@@ -43,5 +83,10 @@ public class TowerUI : DragUI
     int GetCurrency()
     {
         return GameManager.instance.GetStaff();
+    }
+
+    bool CanBuy()
+    {
+        return GetCurrency() >= towerType.cost;
     }
 }
