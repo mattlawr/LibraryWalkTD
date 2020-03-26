@@ -4,6 +4,9 @@ A tower defense game based on Library Walk at UCSD!
 The game is about keeping as many students from getting to class as possible.
 Students act as enemies, booths and flyer people act as towers.
 
+## WINTER QUARTER Build! v0.1.0
+[Download](https://drive.google.com/open?id=10e4rQauWu_FzYX_4KOrr55ckNdJmk0wp) for Windows PC
+
 ### Notice 2.0
 [03-09-2020] I will be putting a build together by the end of the quarter (the game loop is almost finished).
 However, the project as a whole will probably be extended into next quarter if we want to polish it for a mobile launch,
