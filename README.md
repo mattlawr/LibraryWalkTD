@@ -31,7 +31,7 @@ As a note: the Unity project was giving us some technical issues, so the team wa
 
 ## Images:
 ![mockup example 4](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/03-25_postWinter.png)
-[//]: <> ![mockup example 3](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/03-05_zoom.png)
-[//]: <> ![mockup example 2](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/02-20_gTest.png)
-[//]: <> ![mockup example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-29_gTest.png)
-[//]: <> ![waypoint example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-27_enemyPath.png)
+![mockup example 3](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/03-05_zoom.png)
+![mockup example 2](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/02-20_gTest.png)
+![mockup example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-29_gTest.png)
+![waypoint example](https://github.com/justbrentvanzant/LibraryWalkTD/blob/master/progress%20images/01-27_enemyPath.png)
