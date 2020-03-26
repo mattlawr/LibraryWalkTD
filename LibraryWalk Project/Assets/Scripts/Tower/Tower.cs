@@ -24,6 +24,9 @@ public class Tower : MonoBehaviour
     [Tooltip("The Bullet prefab to fire at targets.")]
     public Bullet bulletPrefab;
 
+    // Leave null
+    public Animation anim;
+
     // Store all enemies in range
     private List<Enemy> enemyList = new List<Enemy>();
 
@@ -85,13 +88,12 @@ public class Tower : MonoBehaviour
         // TODO: This behavior should probably change; be chosen by the player
         Enemy enemy = enemyList[0];
 
+        if (anim) { anim.Play(PlayMode.StopAll); }
+
         if (!bulletPrefab) { return; }
 
         // Instantiate the Bullet and set it to follow the target
         Bullet bullet = GameObject.Instantiate(bulletPrefab, position, Quaternion.identity);
         bullet.SetTarget(enemy.transform);
-
-        // Bullet sets itself to yeet after 3 seconds
-        Destroy(bullet.gameObject, 3f);
     }
 }

@@ -12,10 +12,12 @@ public class GameManager : MonoBehaviour
     public Text text_currency;
     public Text text_level;
     public GameObject ui_gameOver;
+    public GameObject ui_pauseMenu;
 
     private int hp = 5;
     private int staff = 10;
     private bool gameover = false;
+    private bool paused = false;
 
     public static GameManager instance = null;
 
@@ -46,6 +48,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameover)
+            return;
+
         if (text_time)
         {
             float timer = Time.time;
@@ -53,6 +58,16 @@ public class GameManager : MonoBehaviour
             string seconds = Mathf.Floor(timer % 60).ToString("00");
 
             text_time.text = minutes + ":" + seconds;
+        }
+
+        //if p key is pressed, then either pause or resume the game
+        if (Input.GetKeyDown(KeyCode.P) && paused)
+        {
+            Resume();
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && !paused)
+        {
+            Pause();
         }
     }
 
@@ -62,6 +77,9 @@ public class GameManager : MonoBehaviour
     /// <param name="damage">Amount to decrease player health.</param>
     public void LoseHealth(int damage)
     {
+        if (gameover)
+            return;
+
         hp -= damage;
 
         text_health.text = "HP: " + hp;
@@ -69,6 +87,8 @@ public class GameManager : MonoBehaviour
         if (hp <= 0)
         {
             hp = 0;
+
+            text_health.text = "HP: " + hp;
 
             // LOSE
             GameOver();
@@ -88,13 +108,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    // Adapted from PauseMenu.cs ---
+    public void Resume()
+    {
+        ui_pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        paused = false;
+    }
+    void Pause()
+    {
+        ui_pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        paused = true;
+    }
+    // ---
+
     /// <summary>
     /// Updates text object from spawn manager.
     /// </summary>
     /// <param name="lvl">The level to display</param>
     public void UpdateLevel(int lvl)
     {
-        if (gameover) { return; }
+        if (gameover)
+            return;
 
         text_level.text = "LVL: " + lvl;
     }
@@ -105,7 +141,8 @@ public class GameManager : MonoBehaviour
     /// <param name="amt">Amount to increase.</param>
     public void AddStaff(int amt)
     {
-        if(gameover) { return; }
+        if (gameover)
+            return;
 
         staff += amt;
 

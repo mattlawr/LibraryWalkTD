@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     public Image healthBar; //enemy health bar
 
     public float speed = 10f;   // Control how fast this enemy type is
+    float speedInit;
 
     float hp = 1; // so that "health" acts as a maximum health
     //int shp = 0; // For shields! (implement later!)
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
         }
 
         hp = health;
+        speedInit = speed;
 
         if (!sprite)
         {
@@ -78,6 +80,11 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Slow(int amt)
+    {
+        speed = speedInit / (amt + 0f);
     }
 
     void Die()

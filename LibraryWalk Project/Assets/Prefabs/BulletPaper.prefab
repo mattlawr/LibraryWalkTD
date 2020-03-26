@@ -49,7 +49,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
-  damage: 1
+  type: 0
+  damage: 0
+  strength: 1
+  lifetime: 3
+  destroyOnHit: 1
 --- !u!212 &5489898128331513944
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class TowerUI : DragUI
     public Tower towerType;
 
     public Image image;
+    public Text cost;
 
     public AudioSource pickupSound;
     public AudioSource placeSound;
@@ -18,6 +19,7 @@ public class TowerUI : DragUI
     private void Start()
     {
         initColor = image.color;
+        cost.text = towerType.cost + "";
     }
 
     protected override void Update()

@@ -95,11 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb6db2b7426cc343af9e66e0900b012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 20
-  radius: 15
+  cost: 15
+  radius: 12
   attackDelay: 1
   bulletPrefab: {fileID: 1671905995868047223, guid: e28bb3e6fa9cde242864b047b1ad8c35,
     type: 3}
+  anim: {fileID: 0}
 --- !u!58 &-3644668696406456979
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 12
 --- !u!61 &4255621729892983546
 BoxCollider2D:
   m_ObjectHideFlags: 0

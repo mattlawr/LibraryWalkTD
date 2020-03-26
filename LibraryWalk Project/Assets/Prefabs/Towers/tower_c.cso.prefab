@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4255621729892983545}
   - component: {fileID: 4255621729892983544}
-  - component: {fileID: 4785945977950671072}
   - component: {fileID: -2073851957260739845}
   - component: {fileID: -3644668696406456979}
   - component: {fileID: 4255621729892983546}
+  - component: {fileID: 2317377902089757407}
   m_Layer: 0
   m_Name: tower_c.cso
   m_TagString: Untagged
@@ -85,25 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4785945977950671072
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255621729892983550}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 156cedd94952a5845a81f04f99a063b9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-2073851957260739845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,11 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb6db2b7426cc343af9e66e0900b012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 40
-  radius: 5
-  attackDelay: 0.5
-  bulletPrefab: {fileID: 1671905995868047223, guid: e28bb3e6fa9cde242864b047b1ad8c35,
+  cost: 30
+  radius: 2
+  attackDelay: 2
+  bulletPrefab: {fileID: 1671905995868047223, guid: bb167c9d65943794a90ef617d4a0b12f,
     type: 3}
+  anim: {fileID: 2317377902089757407}
 --- !u!58 &-3644668696406456979
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +118,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2
 --- !u!61 &4255621729892983546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,3 +145,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.31, y: 0.28}
   m_EdgeRadius: 0
+--- !u!111 &2317377902089757407
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255621729892983550}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 36ff799ac5398fc43a769f6dc222a292, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 36ff799ac5398fc43a769f6dc222a292, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

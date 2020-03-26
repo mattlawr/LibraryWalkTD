@@ -107,7 +107,7 @@ public class DragUI : MonoBehaviour
         Transform t = this.transform;// Target this object
 
         if (carry && held) { Destroy(held.gameObject); }// Remove temp obj
-        if (drop && pos.y >= Y_MIN)
+        if (drop)
         {
             GameObject c = GameObject.Instantiate(drop, null);// Instantiate drop object
             t = c.transform;
