@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 1832327305583854173}
   - component: {fileID: 7724552766173844460}
   m_Layer: 0
-  m_Name: en_Scooter
+  m_Name: en_fastBike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,8 +220,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ddc2a6fd06c3f274293678f8b3be2067, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: a559edfdde91b4340b46023a01743d2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,8 +244,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21837b6f0a52bc74a918a59190a56928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPrefab: {fileID: 1934731147015077324, guid: f86c38c72fce2e548b2d41f99c554b70,
+    type: 3}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5484086728967250806}
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a0480fa68c9bea040ade51fc564eff66,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   sprite: {fileID: 3216137001544458124}
-  health: 3
+  health: 5
   healthBar: {fileID: 3534943971225023369}
   speed: 10
 --- !u!58 &368872249290005477

@@ -53,13 +53,13 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < max; i++)
         {
-            spawner.SpawnEnemy();
+            spawner.SpawnEnemy(waveIndex);
             yield return new WaitForSeconds(0.5f);
         }
 
-        waveIndex++;
-
-        // Temporary
+        // Temporary?
         GameManager.instance.UpdateLevel(waveIndex);
+
+        waveIndex++;
     }
 }

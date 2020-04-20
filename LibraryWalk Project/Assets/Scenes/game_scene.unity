@@ -269,6 +269,8 @@ MonoBehaviour:
   - {fileID: 5484086728967250806, guid: bb584564902ee194a8832faaed942d78, type: 3}
   - {fileID: 5484086728967250806, guid: 2924bd8f19a5274469a509a131c133e9, type: 3}
   - {fileID: 5484086728967250806, guid: bea1b76fc3ee2114896b8609d8487c3c, type: 3}
+  - {fileID: 3758966982528667935, guid: 55f5c217ba0bbdd40abafd99391ebeff, type: 3}
+  - {fileID: 5484086728967250806, guid: 9550afad296842c41b802fa6ea384c2b, type: 3}
 --- !u!114 &256778502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,6 +1506,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -142.29999
+      objectReference: {fileID: 0}
+    - target: {fileID: 978948566666598635, guid: a4b5ca514e0824e41a8e5fb000f734dc,
+        type: 3}
+      propertyPath: m_Text
+      value: 'LIBRARY WALK TD v0.1.1
+
+        SPRING QUARTER BUILD'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b5ca514e0824e41a8e5fb000f734dc, type: 3}

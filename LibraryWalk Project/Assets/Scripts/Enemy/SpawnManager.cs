@@ -1,6 +1,6 @@
 ﻿/**
  * SpawnManager.cs
- * Author: Matthew Lawrence
+ * Author: Library Walk TD
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -50,14 +50,14 @@ public class SpawnManager : MonoBehaviour
     /// <summary>
     /// Spawn an enemy at a random path.
     /// </summary>
-    public void SpawnEnemy()
+    public void SpawnEnemy(int lvl = 1)
     {
         // Random path chosen from array
         int i = Random.Range(0, paths.Length);
         Path currPath = paths[i];
 
-        // Spawn random enemy object
-        int randomEnemy = Random.Range(0, enemyPrefabs.Length); // gets random enemy
+        // Spawn random enemy object (uses lvl parameter to choose from array, tied to current wave)
+        int randomEnemy = Mathf.Clamp(Random.Range(0, lvl/2), 0, enemyPrefabs.Length - 1);
         Enemy en = Instantiate(enemyPrefabs[randomEnemy], currPath.transform.position, currPath.transform.rotation, null);
 
         // Tell the enemy to follow the chosen Path
