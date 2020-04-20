@@ -15,7 +15,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Class for objects to decide where to move next, when to take damage, when to die, etc.
 /// </summary>
-public class Enemy : MonoBehaviour
+public class Enemy : Entity
 {
     public SpriteRenderer sprite;   // To flip the sprite depending on the direction
 
@@ -87,12 +87,12 @@ public class Enemy : MonoBehaviour
         speed = speedInit / (amt + 0f);
     }
 
-    void Die()
+    protected override void Die(float t = 0f)
     {
-        Destroy(gameObject);
-
         // Reward for player
         GameManager.instance.AddStaff(1);
+
+        base.Die(t);
     }
 
     // Called when target is reached

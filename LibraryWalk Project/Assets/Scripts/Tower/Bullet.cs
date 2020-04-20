@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : Entity
 {
     public enum damageType { Health, Slowdown };
     public enum bulletType { Contact, Area };
@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Destroy without Die()
         Destroy(gameObject, lifetime);
 
         // Check an area for enemies
@@ -38,6 +39,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Destroy without calling Die()
         if (!target) {
             Destroy(gameObject); return;
         }
@@ -90,7 +92,7 @@ public class Bullet : MonoBehaviour
 
             if (destroyOnHit)
             {
-                Destroy(gameObject);
+                Die();
             }
         }
     }
